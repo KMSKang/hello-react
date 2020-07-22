@@ -17,7 +17,7 @@ function App() {
    * 과장님꺼
    */
   const [value, setValue] = useState(0);
-  const [isEnabled, setEnabled] = useState(false);
+  const [isEnabled, setEnabled] = useState(true);
 
   /**
    * 과장님꺼
@@ -29,11 +29,14 @@ function App() {
   /**
    * 내꺼
    */
-  var valueCurrent = value;
+  let valueCurrent = value;
 
   function valueUp() {
     setValue(value + 1);
     ++valueCurrent;
+    if(valueCurrent > 0) {
+      setEnabled(false);
+    }
   }
 
   function valueDown() {
